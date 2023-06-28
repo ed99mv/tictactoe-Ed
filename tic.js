@@ -1,38 +1,16 @@
 ///Variables///
 
-const notificacionG = document.getElementById("NotificacionG");
+const notificacionG = document.getElementById("NotificacionG"),
+      CellVacias=["x","j","x","j","g","m","gt","",""]
+      result= CellVacias.filter(word => word.length <1)
+      console.log(result);
+let contenedor = document.getElementById("Contenedor")
 
 let camposC = document.getElementsByClassName("cellG");
 
 let jugador1 = "&#128054"; //perro
 let maquina = "&#128049"; //gato
 let juegoActivo = true;
-
-
-
-function ram() {
-    
-  
-    for (let index = 0; index < 30; index++) {
-       
-        let valoR1 = Math.floor(Math.random() * 8);
-
-
-        if (valoR1!=0) {
-            
-            return valoR1
-        }
-    }
-    
-
-  
-    
-}
-
-
-
-
-
 
 
 combGanador = [
@@ -47,6 +25,9 @@ combGanador = [
 ];
 
 msjTurno = () => `Turno del jugador ${jugador1}`;
+
+
+
 ///Funciones///
 function main() {
   estadoJuego(msjTurno());
@@ -56,126 +37,60 @@ function estadoJuego(mensaje) {
   notificacionG.innerHTML = mensaje;
 }
 
-function TurnoJugadores() {
-  camposC[0].addEventListener("click", () => {
-    camposC[0].innerHTML = jugador1;
-
-    let valoR = Math.floor(Math.random() * 8);
-    let  blanco = camposC[0].textContent
-
-    console.log(blanco)
-
-console.log(valoR)
-////copiar
-    if (blanco[0]!="") {
-        setTimeout(() => {
-
-            if (valoR!=0) {
-
-                camposC[valoR].innerHTML = maquina;
-            }else{
-                alert("soy un cero pero me van a cambiar")
-                let vali=ram()
-                camposC[vali].innerHTML = maquina;
-
-
-            }
-           
-          }, 1500);
-    }
-
-     
-
+function ram() {
+  for (let index = 0; index < 8; index++) {
     
-  });
-
-  /////////////////////////////////////////////////////////////////////
-
-  camposC[1].addEventListener("click", () => {
-    camposC[1].innerHTML = jugador1;
-    let valoR = Math.floor(Math.random() * 8);
-    let  blanco = camposC[1].textContent
-
-    console.log(blanco)
-
-
-
-    if (blanco[1]!="") {
-        setTimeout(() => {
-            camposC[valoR].innerHTML = maquina;
-          }, 1500);
-    }
-/////copiar
+    let valoR1 = Math.floor(Math.random() * 8);
     
-     
-
-  });
-
-  camposC[2].addEventListener("click", () => {
-    camposC[2].innerHTML = jugador1;
-
-
-    let valoR = Math.floor(Math.random() * 8);
-    let  blanco = camposC[2].textContent
-
-    console.log(blanco)
-
-
-
-    if (blanco[2]!="") {
-        setTimeout(() => {
-            camposC[valoR].innerHTML = maquina;
-          }, 1500);
+    if (valoR1 != 0) {
+      return valoR1;
     }
-
-    
-  });
-
-  camposC[3].addEventListener("click", () => {
-    camposC[3].innerHTML = jugador1;
-
-    setTimeout(() => {
-      camposC[valoR].innerHTML = maquina;
-    }, 1500);
-  });
-  camposC[4].addEventListener("click", () => {
-    camposC[4].innerHTML = jugador1;
-
-    setTimeout(() => {
-      camposC[valoR].innerHTML = maquina;
-    }, 1500);
-  });
-  camposC[5].addEventListener("click", () => {
-    camposC[5].innerHTML = jugador1;
-
-    setTimeout(() => {
-      camposC[valoR].innerHTML = maquina;
-    }, 1500);
-  });
-
-  camposC[6].addEventListener("click", () => {
-    camposC[6].innerHTML = jugador1;
-
-    setTimeout(() => {
-      camposC[valoR].innerHTML = maquina;
-    }, 1500);
-  });
-
-  camposC[7].addEventListener("click", () => {
-    camposC[7].innerHTML = jugador1;
-
-    setTimeout(() => {
-      camposC[valoR].innerHTML = maquina;
-    }, 1500);
-  });
-  camposC[8].addEventListener("click", () => {
-    camposC[8].innerHTML = jugador1;
-
-    setTimeout(() => {
-      camposC[valoR].innerHTML = maquina;
-    }, 1500);
-  });
+  }
 }
+
+
+function TurnoJugadores() {
+
+  for (let i = 0; i < 9; i++) {
+
+    camposC[i].addEventListener("click", () => {
+      camposC[i].innerHTML = jugador1;
+      console.log(camposC);
+      if(camposC!==""){
+        ;
+      }else{
+        true
+      }
+      let valoR = Math.floor(Math.random() * 8);
+      let blanco = camposC[i].textContent;
+  
+       console.log(blanco);
+  
+       console.log(valoR);
+      
+      if (blanco[i] != "") {
+        setTimeout(() => {
+          let valores = i;
+          if (valoR !== valores) {
+            camposC[valoR].innerHTML = maquina;
+          } else {
+            alert("soy el mismo numero que acabas de clickear pero me van a cambiar");
+            let vali = ram();
+            camposC[vali].innerHTML = maquina;
+          }
+        }, 1500);
+      }
+    });
+  }
+
+  }
+
+
+/*let div = document.querySelector('.cellG')
+if (!div.innerHTML.trim()) {
+  let valorRa=ram()
+  let final=div.innerHTML=valorRa
+}*/
 
 ///Invocaciones///
 TurnoJugadores();
