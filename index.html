@@ -10,11 +10,13 @@
     <div id="Contenedor">
       <h1>Tic Tac Toe</h1>
 
-      <h2 style="color: white;">PUNTAJE HUMANO</h2>
-      <h2 id="puntaje" style="color: white;"></h2>
-      <div style="color: white;" id="contenedorG">
+      <!-- <h2 style="color: white">Partidas Jugadas</h2> -->
+      <div style="font-size: 28px; color: white" id="contadorH"></div>
+      <h3 style="color: white" id="ganador"></h3>
+      <h2 id="puntaje" style="color: white"></h2>
+      <div style="color: white" id="contenedorG">
         <div class="cellG" id="cellG"></div>
-        <div class="cellG"id="cellG"></div>
+        <div class="cellG" id="cellG"></div>
         <div class="cellG" id="cellG"></div>
         <div class="cellG" id="cellG"></div>
         <div class="cellG" id="cellG"></div>
@@ -24,10 +26,10 @@
         <div class="cellG" id="cellG"></div>
       </div>
 
-     
-      <h2 style="color: white;" id="turno"></h2>
-      <button id="btnReset" class="btnReset">Restablecer</button>
+      <h2 style="color: #02da6e" id="turno"></h2>
+      <button id="btnReset" class="btnReset">Reiniciar</button>
     </div>
+  
     <img
       class="gif1"
       src="https://media1.giphy.com/media/Ut9IfYd8U1C0CNQi76/200w.gif?cid=6c09b9522dkx8vv2kqax7gml6bgi2vmrws78fxmpbhpj1r8z&ep=v1_gifs_search&rid=200w.gif&ct=g"
@@ -49,7 +51,8 @@
       src="https://i.gifer.com/origin/14/1483e065bdcba2f4ed950d7fbda5f973_w200.gif"
       alt=""
     />
-<!-- 
+ 
+    <!-- 
     <audio controls>
       <source src="./src/songs.mp3" type="audio/mp3" />
       Tu navegador no soporta audio HTML5.

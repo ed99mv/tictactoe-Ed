@@ -47,6 +47,7 @@ body {
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
   height: 100vh;
+  
 }
 @keyframes gradient {
   0% {
@@ -94,7 +95,8 @@ body {
 }
 
 
-@media (min-width:1px){
+
+@media (min-width:350px){
     h1{
         color: #02da6e;
         font-size: 50px;
@@ -126,14 +128,14 @@ body {
    
     .gif1{
         position: absolute;
-        bottom: 20%;
+        bottom: 15%;
         left: 30%;
         width: 50px;
         height: 50px;
     }
     .gif2{
         position: absolute;
-        bottom: 18.5%;
+        bottom: 13.5%;
         left: 39%;
         width: 75px;
         height: 75px;
@@ -141,19 +143,20 @@ body {
     
     .gif3{
         position: absolute;
-        bottom: 20%;
-        left: 50%;
+        bottom: 15%;
+        left: 51%;
         width: 50px;
         height: 50px;
     }
     
     .gif4{
         position: absolute;
-        bottom: 20%;
+        bottom: 15%;
         left: 60%;
         width: 50px;
         height: 50px;
     }
+    
 }
 
 @media (min-width:770px){
@@ -216,6 +219,7 @@ body {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     #Contenedor {
+      
       text-align: center;
       
     }
@@ -272,7 +276,8 @@ body {
         background-position: 0% 50%;
       }
     }
-    
+
+
     .gif1{
         position: absolute;
         bottom: 80%;
